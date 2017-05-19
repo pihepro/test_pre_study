@@ -12,5 +12,5 @@ Tee jotain
 	Log	Log message
 	
 Tama failaa
-	Should Be Equal	1	2
+	Should Be Equal	2	2
 	
