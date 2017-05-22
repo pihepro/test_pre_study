@@ -10,7 +10,7 @@ namespace ThriftClient
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Apache thrift client");
+            Console.WriteLine("Apache thrift client - new message");
         }
     }
 }
