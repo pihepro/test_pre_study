@@ -1,0 +1,8 @@
+
+code/.vs/ApacheThrift-prestudy/v15/.suo
+code/ApacheThrift-prestudy/.vs/ApacheThrift-prestudy/v15/.suo
+*.exe
+code/ThriftClient/bin/Debug/ThriftClient.exe.config
+*.pdb
+code/ThriftServer/bin/Debug/ThriftServer.exe.config
+code/ThriftServer/obj/Debug/CoreCompileInputs.cache
