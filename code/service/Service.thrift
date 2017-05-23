@@ -8,7 +8,6 @@ typedef i32 int // We can use typedef to get pretty names for the types we are u
  2: string name,
  3: optional string description,
  4: optional string value,
- 
  }
  
 service StorageService
