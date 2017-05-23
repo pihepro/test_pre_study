@@ -26,6 +26,7 @@ namespace storage
     private int _storageId;
     private string _name;
     private string _description;
+    private string _value;
 
     public int StorageId
     {
@@ -66,6 +67,19 @@ namespace storage
       }
     }
 
+    public string Value
+    {
+      get
+      {
+        return _value;
+      }
+      set
+      {
+        __isset.@value = true;
+        this._value = value;
+      }
+    }
+
 
     public Isset __isset;
     #if !SILVERLIGHT
@@ -75,6 +89,7 @@ namespace storage
       public bool storageId;
       public bool name;
       public bool description;
+      public bool @value;
     }
 
     public StoragePoint() {
@@ -114,6 +129,13 @@ namespace storage
             case 3:
               if (field.Type == TType.String) {
                 Description = iprot.ReadString();
+              } else { 
+                TProtocolUtil.Skip(iprot, field.Type);
+              }
+              break;
+            case 4:
+              if (field.Type == TType.String) {
+                Value = iprot.ReadString();
               } else { 
                 TProtocolUtil.Skip(iprot, field.Type);
               }
@@ -163,6 +185,14 @@ namespace storage
           oprot.WriteString(Description);
           oprot.WriteFieldEnd();
         }
+        if (Value != null && __isset.@value) {
+          field.Name = "value";
+          field.Type = TType.String;
+          field.ID = 4;
+          oprot.WriteFieldBegin(field);
+          oprot.WriteString(Value);
+          oprot.WriteFieldEnd();
+        }
         oprot.WriteFieldStop();
         oprot.WriteStructEnd();
       }
@@ -192,6 +222,12 @@ namespace storage
         __first = false;
         __sb.Append("Description: ");
         __sb.Append(Description);
+      }
+      if (Value != null && __isset.@value) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("Value: ");
+        __sb.Append(Value);
       }
       __sb.Append(")");
       return __sb.ToString();

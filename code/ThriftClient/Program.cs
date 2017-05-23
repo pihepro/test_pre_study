@@ -35,7 +35,7 @@ namespace ThriftClient
                     var result = client.read(1);
                     Console.WriteLine("read: " + result);
 
-                    if (client.write(5, "Storage Point 6"))
+                    if (client.write(0, "uusi arvo"))
                     {
                         Console.WriteLine("write ok");
                     }
@@ -43,11 +43,7 @@ namespace ThriftClient
                     {
                         Console.WriteLine("write failed");
                     }
-                    list = client.storagePoints();
-                    foreach (var p in list)
-                    {
-                        Console.WriteLine("Id: {0}, Name: {1}, Description: {2}", p.StorageId, p.Name, p.Description);
-                    }
+                   
                 }
                 finally
                 {

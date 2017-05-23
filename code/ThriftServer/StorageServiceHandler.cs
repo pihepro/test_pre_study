@@ -39,9 +39,9 @@ namespace ThriftServer
         {
             Console.WriteLine("Read {0} ", id);
             StoragePoint p = null;
-            if (_points.TryGetValue(id, out p))
+            if (_points.TryGetValue(id, out p) && p.Value != null)
             {
-                return p.Name;
+                return p.Value;
             }
             else
             {
@@ -53,16 +53,13 @@ namespace ThriftServer
         public bool write(int id, string value)
         {
             Console.WriteLine("Write {0}, {1} ", id, value);
-            if (_points.ContainsKey(id))
+            if (!_points.ContainsKey(id))
             {
                 return false;
             }
             else
             {
-                StoragePoint p = new StoragePoint();
-                p.StorageId = id;
-                p.Name = value;
-                _points.Add(id, p);
+                _points[id].Value = value;
                 return true;
             }
         }

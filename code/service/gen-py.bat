@@ -1,0 +1,1 @@
+thrift.exe --gen py -out ..\tests\lib Service.thrift
