@@ -1,7 +1,0 @@
-C:\test_pre_study\test_pre_study\code\ThriftClient\bin\Debug\ThriftClient.exe.config
-C:\test_pre_study\test_pre_study\code\ThriftClient\bin\Debug\ThriftClient.exe
-C:\test_pre_study\test_pre_study\code\ThriftClient\bin\Debug\ThriftClient.pdb
-C:\test_pre_study\test_pre_study\code\ThriftClient\bin\Debug\Thrift.dll
-C:\test_pre_study\test_pre_study\code\ThriftClient\obj\Debug\ThriftClient.csprojResolveAssemblyReference.cache
-C:\test_pre_study\test_pre_study\code\ThriftClient\obj\Debug\ThriftClient.exe
-C:\test_pre_study\test_pre_study\code\ThriftClient\obj\Debug\ThriftClient.pdb
