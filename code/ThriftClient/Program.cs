@@ -43,6 +43,11 @@ namespace ThriftClient
                     {
                         Console.WriteLine("write failed");
                     }
+                    list = client.storagePoints();
+                    foreach (var p in list)
+                    {
+                        Console.WriteLine("Id: {0}, Name: {1}, Description: {2}", p.StorageId, p.Name, p.Description);
+                    }
                 }
                 finally
                 {

@@ -9,7 +9,7 @@ namespace ThriftServer
 {
     public class StorageServiceHandler : StorageService.Iface
     {
-        Dictionary<int, StoragePoint> _points;
+       private readonly Dictionary<int, StoragePoint> _points;
 
         public StorageServiceHandler()
         {
