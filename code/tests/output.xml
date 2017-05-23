@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.0.2 (Python 3.6.1 on win32)" generated="20170523 12:43:45.184">
+<robot generator="Robot 3.0.2 (Python 3.6.1 on win32)" generated="20170523 14:34:57.828">
 <suite id="s1" name="Test" source="C:\test_pre_study\test_pre_study\code\tests\test.robot">
 <test id="s1-t1" name="My Test case">
 <kw name="Write Storage Point Value" library="StorageLibrary">
@@ -7,7 +7,7 @@
 <arg>0</arg>
 <arg>${VAR}</arg>
 </arguments>
-<status status="PASS" starttime="20170523 12:44:06.823" endtime="20170523 12:44:27.828"></status>
+<status status="PASS" starttime="20170523 14:35:19.611" endtime="20170523 14:35:41.609"></status>
 </kw>
 <kw name="Read Storage Point Value" library="StorageLibrary">
 <arguments>
@@ -16,8 +16,10 @@
 <assign>
 <var>${V1}</var>
 </assign>
-<msg timestamp="20170523 12:44:27.831" level="INFO">${V1} = 25</msg>
-<status status="PASS" starttime="20170523 12:44:27.829" endtime="20170523 12:44:27.831"></status>
+<msg timestamp="20170523 14:35:41.615" level="INFO">Type: &lt;class 'list'&gt;
+ID:0 Name: Storage Point 1 Value: 25</msg>
+<msg timestamp="20170523 14:35:41.616" level="INFO">${V1} = 25</msg>
+<status status="PASS" starttime="20170523 14:35:41.610" endtime="20170523 14:35:41.616"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -25,9 +27,9 @@
 <arg>${V1}</arg>
 <arg>${VAR}</arg>
 </arguments>
-<status status="PASS" starttime="20170523 12:44:27.833" endtime="20170523 12:44:27.834"></status>
+<status status="PASS" starttime="20170523 14:35:41.618" endtime="20170523 14:35:41.619"></status>
 </kw>
-<status status="PASS" starttime="20170523 12:44:06.821" endtime="20170523 12:44:27.835" critical="yes"></status>
+<status status="PASS" starttime="20170523 14:35:19.610" endtime="20170523 14:35:41.621" critical="yes"></status>
 </test>
 <test id="s1-t2" name="Test write and read">
 <kw name="Verify Write And Read" library="StorageLibrary">
@@ -35,21 +37,44 @@
 <arg>1</arg>
 <arg>uusi arvo</arg>
 </arguments>
-<status status="PASS" starttime="20170523 12:44:27.842" endtime="20170523 12:44:48.857"></status>
+<status status="PASS" starttime="20170523 14:35:41.627" endtime="20170523 14:36:02.630"></status>
 </kw>
-<status status="PASS" starttime="20170523 12:44:27.840" endtime="20170523 12:44:48.858" critical="yes"></status>
+<status status="PASS" starttime="20170523 14:35:41.625" endtime="20170523 14:36:02.632" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20170523 12:43:45.189" endtime="20170523 12:44:48.864"></status>
+<test id="s1-t3" name="Test read not exisiting storage value">
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Storage point does not exist</arg>
+<arg>read storage point value</arg>
+<arg>100</arg>
+</arguments>
+<kw name="Read Storage Point Value" library="StorageLibrary">
+<arguments>
+<arg>100</arg>
+</arguments>
+<msg timestamp="20170523 14:36:23.654" level="INFO">Type: &lt;class 'list'&gt;
+ID:0 Name: Storage Point 1 Value: 25
+ID:1 Name: Storage Point 2 Value: uusi arvo
+ID:2 Name: Storage Point 3 Value: None</msg>
+<msg timestamp="20170523 14:36:23.657" level="FAIL">Storage point does not exist</msg>
+<status status="FAIL" starttime="20170523 14:36:02.641" endtime="20170523 14:36:23.657"></status>
+</kw>
+<status status="PASS" starttime="20170523 14:36:02.640" endtime="20170523 14:36:23.659"></status>
+</kw>
+<status status="PASS" starttime="20170523 14:36:02.638" endtime="20170523 14:36:23.661" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20170523 14:34:57.833" endtime="20170523 14:36:23.668"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0">Critical Tests</stat>
-<stat pass="2" fail="0">All Tests</stat>
+<stat pass="3" fail="0">Critical Tests</stat>
+<stat pass="3" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" id="s1" name="Test">Test</stat>
+<stat pass="3" fail="0" id="s1" name="Test">Test</stat>
 </suite>
 </statistics>
 <errors>

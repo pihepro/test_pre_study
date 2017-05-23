@@ -19,6 +19,7 @@ class StoragePoint(object):
      - storageId
      - name
      - description
+     - value
     """
 
     thrift_spec = (
@@ -26,14 +27,16 @@ class StoragePoint(object):
         (1, TType.I32, 'storageId', None, 0, ),  # 1
         (2, TType.STRING, 'name', 'UTF8', None, ),  # 2
         (3, TType.STRING, 'description', 'UTF8', None, ),  # 3
+        (4, TType.STRING, 'value', 'UTF8', None, ),  # 4
     )
 
-    def __init__(self, storageId=thrift_spec[1][4], name=None, description=None,):
+    def __init__(self, storageId=thrift_spec[1][4], name=None, description=None, value=None,):
         if storageId is self.thrift_spec[1][4]:
             storageId = 0
         self.storageId = storageId
         self.name = name
         self.description = description
+        self.value = value
 
     def read(self, iprot):
         if iprot._fast_decode is not None and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None:
@@ -59,6 +62,11 @@ class StoragePoint(object):
                     self.description = iprot.readString().decode('utf-8') if sys.version_info[0] == 2 else iprot.readString()
                 else:
                     iprot.skip(ftype)
+            elif fid == 4:
+                if ftype == TType.STRING:
+                    self.value = iprot.readString().decode('utf-8') if sys.version_info[0] == 2 else iprot.readString()
+                else:
+                    iprot.skip(ftype)
             else:
                 iprot.skip(ftype)
             iprot.readFieldEnd()
@@ -80,6 +88,10 @@ class StoragePoint(object):
         if self.description is not None:
             oprot.writeFieldBegin('description', TType.STRING, 3)
             oprot.writeString(self.description.encode('utf-8') if sys.version_info[0] == 2 else self.description)
+            oprot.writeFieldEnd()
+        if self.value is not None:
+            oprot.writeFieldBegin('value', TType.STRING, 4)
+            oprot.writeString(self.value.encode('utf-8') if sys.version_info[0] == 2 else self.value)
             oprot.writeFieldEnd()
         oprot.writeFieldStop()
         oprot.writeStructEnd()

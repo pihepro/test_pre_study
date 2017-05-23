@@ -6,3 +6,10 @@ code/ThriftClient/bin/Debug/ThriftClient.exe.config
 *.pdb
 code/ThriftServer/bin/Debug/ThriftServer.exe.config
 code/ThriftServer/obj/Debug/CoreCompileInputs.cache
+code/packages/MSTest.TestAdapter.1.1.11/build/_common/cs/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+code/packages/MSTest.TestAdapter.1.1.11/build/_common/cs/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+*.pyc
+code/tests/lib/storage/ttypes.py
+code/tests/log.html
+code/tests/output.xml
+code/tests/report.html
