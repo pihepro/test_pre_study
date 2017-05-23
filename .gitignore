@@ -13,3 +13,4 @@ code/tests/lib/storage/ttypes.py
 code/tests/log.html
 code/tests/output.xml
 code/tests/report.html
+*.dll
