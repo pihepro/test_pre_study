@@ -17,8 +17,8 @@ namespace ThriftServer
             _points = new Dictionary<int, StoragePoint>
             {
                 {0, new StoragePoint {StorageId=0, Name = "Storage Point 1", Description = "Description 1"} },
-                 {1, new StoragePoint {StorageId=1, Name = "Storage Point 2", Description = "Description 2"} },
-                  {2, new StoragePoint {StorageId=2, Name = "Storage Point 3", Description = "Description 3"} },
+                {1, new StoragePoint {StorageId=1, Name = "Storage Point 2", Description = "Description 2"} },
+                {2, new StoragePoint {StorageId=2, Name = "Storage Point 3", Description = "Description 3"} },
             };
         }
 
@@ -68,6 +68,23 @@ namespace ThriftServer
         {
             Console.WriteLine("Get storagepoints");
             return _points.Values.ToList<StoragePoint>();
+        }
+
+
+        //
+        public void ClearStorage()
+        {
+            _points.Clear();
+        }
+
+        public bool AddStoragePoint(StoragePoint p)
+        {
+            if (_points.ContainsKey(p.StorageId))
+            {
+                return false;
+            }
+            _points.Add(p.StorageId, p);
+            return true;
         }
     }
 }
